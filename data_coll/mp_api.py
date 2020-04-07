@@ -31,7 +31,10 @@ class MP:
         # inputs: list of route ids
         routes_str = ','.join(list(routes))
         api_url = f'https://www.mountainproject.com/data/get-routes?routeIds={routes_str}&key={self.key}'
-        pass
+        response = urllib.request.urlopen(api_url)
+        data = json.load(response)
+        for route in data['routes']:
+            self.collection.insert_one(route)
     
     
     def api_get_ticks(self, user):
