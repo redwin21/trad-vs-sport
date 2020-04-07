@@ -10,7 +10,7 @@ The idea for the project required having data on various climbing routes as well
 
 Given this information, the following steps were taken to acquire the data:
 
-1. The first step in acquiring the data was to run this api call with a list of known climbing locations and their coordinates, acquired from the site's [route guide](https://www.mountainproject.com/route-guide). This location data was put in a simple txt file called `climb_locations.txt`. The data was stored in MongoDB. An example of one of the data entries:
+1. The first step in acquiring the data was to run this api call with a list of known climbing locations and their coordinates, acquired from the site's [route guide](https://www.mountainproject.com/route-guide). This location data was put in a simple txt file called `climb_locations.txt`. The data was stored in MongoDB and in `trad-vs-sport/data/regional_routes.json`. An example of one of the data entries:
 
 ```json
 {
@@ -48,11 +48,11 @@ Given this information, the following steps were taken to acquire the data:
 > https://www.mountainproject.com/route/105806397/the-grand-wall ---> https://www.mountainproject.com/route/stats/105806397/the-grand-wall
 
 
-4. Each url was visited and the entire site was scraped into MongoDB.
+4. Each url was visited and the entire site was scraped into MongoDB and stored in `trad-vs-sport/data/route_stats_page.json`.
 
-5. Each page, now in MongoDB, was analyzed and the user id from each user url (users who rated the route) was recorded and stored in a text file of unique user ids called `trad-vs-sport/data/user_ids.txt`. Steps 3, 4, and 5 were completed in `scrape_routes_stats_page.ipynb`.
+5. Each page, now in MongoDB, was analyzed and the user id from each user url (users who rated the route) were recorded and stored in a text file of unique user ids called `trad-vs-sport/data/user_ids.txt`. Steps 3, 4, and 5 were completed in `scrape_routes_stats_page.ipynb`.
 
-6. Using all of the user ids, the getTicks api was called to get up to 200 of the climbs that each climber has climbed. This data was stored in MongoDB with each entry being a user id. An example of a data entry is:
+6. Using all of the user ids, the getTicks api was called to get up to 200 of the climbs that each climber has climbed. This data was stored in MongoDB and in `trad-vs-sport/data/user_ticks.json`with each entry being a user id. An example of a data entry is:
 
 ```json
 {
@@ -80,11 +80,12 @@ Given this information, the following steps were taken to acquire the data:
                 "userStars": -1,
                 "userRating": ""
             }
+        ]
     }
 ```
 
 7. The next step was to extract a list of route ids for each of the ticks for each user. This creates the relation between each climber and the routes they have climbed. This route id list is stored in `trad-vs-sport/data/route_ids.txt`. Steps 6 and 7 were completed using `get_user_ticks.ipynb`.
 
-8. The final step was to use the list of route ids to call the api for information on the routes. This was a separate api call than step 1 (using route ids in the api instead of geographic coordinates), but provides data in the same format, completing the data created in step 1. This data was stored in a new MongDB. This step was run using `get_routes.ipynb`.
+8. The final step was to use the list of route ids to call the api for information on the routes. This was a separate api call than step 1 (using route ids in the api instead of geographic coordinates), but provides data in the same format, completing the data created in step 1. This data was stored in a new MongDB and in `trad-vs-sport/data/routes.json`. This step was run using `get_routes.ipynb`.
 
 With the data from steps 7 and 8, the hypothesis testing can take place, so the data collection is complete.
