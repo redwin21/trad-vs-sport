@@ -17,34 +17,41 @@ class MP:
     def api_get_routes_lat_long(self, region, lat, lon, dist=50, num_routes=500):
 
         # inputs: latitude, longitude, max distance (max is 50), number of routes (max is 500)
+        # accesses api website and inserts json structured data into mongodb
 
         api_url = f'https://www.mountainproject.com/data/get-routes-for-lat-lon?lat={lat}&lon={lon}&maxDistance={dist}&minDiff=5.1&maxDiff=5.15&maxResults={num_routes}&key={self.key}'
         
         response = urllib.request.urlopen(api_url)
         data = json.load(response)
         self.collection.insert_one({'region':region, 'data': data['routes']})
-
-
-
+        
 
     def api_get_routes(self, routes):
 
         # inputs: list of route ids
-
-        api_url = f'''https://www.mountainproject.com/data/
-                    get-routes?
-                    routeIds={','.join(list(routes))}
-                    &key={self.key}
-                    '''
+        routes_str = ','.join(list(routes))
+        api_url = f'https://www.mountainproject.com/data/get-routes?routeIds={routes_str}&key={self.key}'
         pass
-
+    
+    
     def api_get_climbers(self, user):
 
         # inputs: user id
 
-        api_url = f'''https://www.mountainproject.com/data/
-                    get-ticks?
-                    userId={user}
-                    &key={self.key}
-                    '''
+        api_url = f'https://www.mountainproject.com/data/get-ticks?userId={user}&key={self.key}'
         pass
+    
+    
+    def scrape_url(self, url):
+        
+        # inputs: url to scrape
+        # scrapes entire web page to mongodb
+        
+        url_split = re.split("(^.*(route).)", url)
+        url_stats = url_split[1] + 'stats/' + url_split[3]
+        
+        route_id = url.split('/')[4]
+        
+        r = requests.get(url_stats)
+        self.collection.insert_one({'route_id': route_id, 'route_stats_page': r.content})
+        
