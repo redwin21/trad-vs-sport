@@ -34,7 +34,7 @@ class MP:
         pass
     
     
-    def api_get_climbers(self, user):
+    def api_get_ticks(self, user):
 
         # inputs: user id
 
@@ -44,7 +44,7 @@ class MP:
     
     def scrape_url(self, url):
         
-        # inputs: url to scrape
+        # inputs: url to scrape stats page from
         # scrapes entire web page to mongodb
         
         url_split = re.split("(^.*(route).)", url)
