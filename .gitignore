@@ -1,2 +1,4 @@
 data/
 .vscode/
+data_coll/.ipynb_checkpoints/
+data_coll/__pycache__/
