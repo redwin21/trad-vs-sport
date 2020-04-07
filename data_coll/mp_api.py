@@ -39,7 +39,10 @@ class MP:
         # inputs: user id
 
         api_url = f'https://www.mountainproject.com/data/get-ticks?userId={user}&key={self.key}'
-        pass
+        
+        response = urllib.request.urlopen(api_url)
+        data = json.load(response)
+        self.collection.insert_one({'user_id':user, 'ticks': data['ticks']})
     
     
     def scrape_url(self, url):
