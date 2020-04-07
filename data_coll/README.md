@@ -45,11 +45,46 @@ Given this information, the following steps were taken to acquire the data:
 
 3. Next, each url was modified to address the "stats" page for the route by including the word `stats` after the word `route` and before the route id in each url, as in:
 
-> https://www.mountainproject.com/route/105806397/the-grand-wall > https://www.mountainproject.com/route/stats/105806397/the-grand-wall
+> https://www.mountainproject.com/route/105806397/the-grand-wall ---> https://www.mountainproject.com/route/stats/105806397/the-grand-wall
 
 
 4. Each url was visited and the entire site was scraped into MongoDB.
 
 5. Each page, now in MongoDB, was analyzed and the user id from each user url (users who rated the route) was recorded and stored in a text file of unique user ids called `trad-vs-sport/data/user_ids.txt`. Steps 3, 4, and 5 were completed in `scrape_routes_stats_page.ipynb`.
 
-6. 
+6. Using all of the user ids, the getTicks api was called to get up to 200 of the climbs that each climber has climbed. This data was stored in MongoDB with each entry being a user id. An example of a data entry is:
+
+```json
+{
+    "user_id": "200527767",
+    "ticks": [
+            {
+                "routeId": 106002151,
+                "date": "2019-11-02",
+                "pitches": 1,
+                "notes": "",
+                "style": "TR",
+                "leadStyle": "",
+                "tickId": 118003759,
+                "userStars": -1,
+                "userRating": ""
+            },
+            {
+                "routeId": 106241707,
+                "date": "2019-11-02",
+                "pitches": 1,
+                "notes": "",
+                "style": "TR",
+                "leadStyle": "",
+                "tickId": 118003758,
+                "userStars": -1,
+                "userRating": ""
+            }
+    }
+```
+
+7. The next step was to extract a list of route ids for each of the ticks for each user. This creates the relation between each climber and the routes they have climbed. This route id list is stored in `trad-vs-sport/data/route_ids.txt`. Steps 6 and 7 were completed using `get_user_ticks.ipynb`.
+
+8. The final step was to use the list of route ids to call the api for information on the routes. This was a separate api call than step 1 (using route ids in the api instead of geographic coordinates), but provides data in the same format, completing the data created in step 1. This data was stored in a new MongDB. This step was run using `get_routes.ipynb`.
+
+With the data from steps 7 and 8, the hypothesis testing can take place, so the data collection is complete.
