@@ -6,7 +6,7 @@ The Mountain Project api can be found at [https://www.mountainproject.com/data](
 
 An access key is required to use the api url's. The key can be acquired by creating a user account with Mountain Project. The key is stored in `trad-vs-sport/data/mp_api_key.txt` (not commited to git).
 
-The idea for the project required having data on various climbing routes as well as a list of the climbers who have climbed them. Acquiring this data required a slightly convoluted path. The api calls allow for requesting route data based on route ids and climber data based on user ids, Mountain Project does not provide a list of either of those ids. It does, however, have another api call that takes in a longitude and latitude and reports X number of routes within Y distance (X and Y also being parameters). Each route's site contains a list of climbers who have rated it, with their user pages (and ids) linked. 
+The idea for the project required having data on various climbing routes as well as a list of the climbers who have climbed them. Acquiring this data required a slightly convoluted path. The api calls allow for requesting route data based on route ids and climber data based on user ids, but Mountain Project does not provide a list of either of those ids. It does, however, have another api call that takes in a longitude and latitude and reports X number of routes within Y distance (X and Y also being parameters). Each route's site contains a list of climbers who have rated it, with their user pages (and ids) linked. 
 
 Given this information, the following steps were taken to acquire the data:
 
@@ -49,3 +49,7 @@ Given this information, the following steps were taken to acquire the data:
 
 
 4. Each url was visited and the entire site was scraped into MongoDB.
+
+5. Each page, now in MongoDB, was analyzed and the user id from each user url (users who rated the route) was recorded and stored in a text file of unique user ids called `trad-vs-sport/data/user_ids.txt`. Steps 3, 4, and 5 were completed in `scrape_routes_stats_page.ipynb`.
+
+6. 
