@@ -88,4 +88,6 @@ Given this information, the following steps were taken to acquire the data:
 
 8. The final step was to use the list of route ids to call the api for information on the routes. This was a separate api call than step 1 (using route ids in the api instead of geographic coordinates), but provides data in the same format, completing the data created in step 1. This data was stored in a new MongDB and in `trad-vs-sport/data/routes.json`. This step was run using `get_routes.ipynb`.
 
-With the data from steps 7 and 8, the hypothesis testing can take place, so the data collection is complete.
+9. The two datasets were then converted to tables in `clean_data.ipynb` and stored in csv's as `trad-vs-sport/data/routes.csv` and `trad-vs-sport/data/user_ticks.csv`.
+
+With the data from step 9, the hypothesis testing can take place, so the data collection is complete.
