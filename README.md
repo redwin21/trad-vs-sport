@@ -31,7 +31,7 @@ Here's a snapshot of what the routes and climbers dataframes looks like:
 </p>
 
 <p align='middle'>
-    <td><img src='images/user_df.png' align='center' style='width: 600px;'></td>
+    <td><img src='images/user_df.png' align='center' style='width: 500px;'></td>
 </p>
 
 ---
