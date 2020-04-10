@@ -40,26 +40,51 @@ Currently in the U.S., roped climbing such as trad, sport, and TR are given a di
     <td><img src='images/grade-convert.jpg' align='center' style='width: 300px;'></td>
 </p>
 
-A breakdown of the route ratings collected in the dataset shows that a lot of routes fall in the 5.7 to 5.11 range for rope climbing and V0-V5 for bouldering.
+A breakdown of the route ratings collected in the dataset shows that a lot of routes fall in the 5.7 to 5.12 range for rope climbing and V0-V5 for bouldering.
 
 <p align='middle'>
     <td><img src='analysis/images/route_ratings_bar.png' align='center' style='width: 800px;'></td>
 </p>
 
-For user in analysis, the ratings were converted to a numerical rating based on the chart provided above. For instance, *5.6* would be 6.0, *5.11b* was given 11.8, *V5* is now 12.0, etc. This allowed for proper comparison and analysis. Distributions of trad, sport, and boulder routes based on their numerical rating can be seen int he following plots. Unfortunately, due to the numeric conversion of the ratings being based on discrete keys, the bin size for these, and all following histograms, have to be rather large so the plots look coarse. 
+For use in analysis, the ratings were converted to a numerical rating based on the chart provided above. For instance, *5.6* would be 6.0, *5.11b* was given 11.8, *V5* is now 12.0, etc. This allowed for proper comparison and analysis. Distributions of trad, sport, and boulder routes based on their numerical rating can be seen int he following plots. Unfortunately, due to the numeric conversion of the ratings being based on discrete keys, the bin size for these histograms, and all following, have to be rather large, causing coarse plots.
+
+The distributions of these types of climbing seem to suggest that sport ratings are generally higher than trad.
 
 <p align='middle'>
     <td><img src='analysis/images/route_difficulty.png' align='center' style='width: 800px;'></td>
 </p>
 
-We can get an idea of what type of climbing people favor based on the relationship between the routes *"stars"*, on a 0-5 scale, and the number of people who have made those votes, differentiated by type of climbing. It seems like, while more people have climbed sport in this dataset, they tend to rate trad routes higher. It also makes sense that the lower a route is rated, the less people would want to go climb it, menaing it would have less votes.
+We can get an idea of what type of climbing people favor based on the relationship between the routes *"stars"*, on a 0-5 scale, and the number of people who have made those votes, differentiated by type of climbing. It seems like, while more people have climbed sport in this dataset, they tend to rate trad routes higher. It also makes sense that the lower a route is rated, the less people would want to go climb it, meaning it would have less votes.
 
 <p align='middle'>
     <td><img src='analysis/images/route_stars.png' align='center' style='width: 500px;'></td>
 </p>
 
-We can see that same perspective from a slightly different angle by looking at how many routes of a certain type a climber has climbed in our dataset. It seems like people tend to climb more sport, which coincides with the data that shows it is more abundant.
+We can see a similar perspective from a slightly different angle by looking at how many routes of a certain type a climber has climbed in our dataset. It seems like people tend to climb more sport, which coincides with the data that shows it is more abundant.
 
 <p align='middle'>
     <td><img src='analysis/images/num_climbs.png' align='center' style='width: 500px;'></td>
 </p>
+
+All of this data seems to suggest that people climb sport more regularly, it is more available, and it is generally rated at a higher rating. If this is the case, it wouldn't be too much of a surprise that climbers are generally better at sport climbing on average. This idea is consistent with the climbing community opinions.
+
+---
+
+## Lead or Follow, Send or Fall
+
+To do a deeper dive into the main questions being addressed, we have to break down the data a little further. When a climber climbs a route, there are a handul of "styles" by which they can climb. Leading is the one that we care about, which is when a climber starts from the gound, attached to a loose rope, and clips the rope into protection on their way up. Climbers lead in both sport and trad, but not in bouldering since there is no rope involved. For the sake of consistent comparisons, we also only care about when a climber successfully and cleanly climbed the route by leading it, as opposed to attempting and failing or falling along the way. The lead style categories "flash", "onsight", and "redpoint" all mean a clean and successful climb.
+
+<p align='middle'>
+    <td><img src='analysis/images/climber_styles.png' align='center' style='width: 800px;'></td>
+</p>
+
+With the data broken down in this way, we can take another look at route difficulty. This time, it'll be differentiated by the number of climbs, as opposed to the number of routes we looked at earlier. The distinction here is that only one of each route exists, but many climbers have climbed each one. The failures seemed to have higher difficulties than the successes.
+
+<p align='middle'>
+    <td><img src='analysis/images/climbs_difficulty.png' align='center' style='width: 800px;'></td>
+</p>
+
+---
+
+## Which is harder?
+
