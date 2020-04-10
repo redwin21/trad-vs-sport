@@ -12,7 +12,7 @@ Trad Climber           |  Sport Climber *([source](https://www.powercompanyclimb
 :-------------------------:|:-------------------------:
 ![](images/trad_climber.jpg)  |  ![](images/sport_climber.jpeg)
 
-Trad climbing involves placing your own temporary protection as you lead the rope up to the top, and usually involves climbing in a crack where the gear can be placed. Sport climbing is oriented towards climbing on the face of the rock, where permanent bolts are added to clip the rope into as protection. Both of these types of climbing, while very different, are rated on the same difficulty scale. It is a notorious notion in the climbing community that trad climbing is harder than sport climbing. Is this true? Are trad and sport different enough that they should be graded differently? Bouldering, which is another style of rock climbing, has its own difficulty scale, sho why don't trad or sport? This analysis is going to try to shed light on these questions and on what climbers climb in general.
+Trad climbing involves placing your own temporary protection as you lead the rope up to the top, and usually involves climbing in a crack where the gear can be placed. Sport climbing is oriented towards climbing on the face of the rock, where permanent bolts are added to clip the rope into as protection. Both of these types of climbing, while very different, are rated on the same difficulty scale. It is a notorious notion in the climbing community that trad climbing is harder than sport climbing. Is this true? Are trad and sport distinct enough that they should be graded differently? Bouldering, which is another style of rock climbing, has its own difficulty scale. This analysis is going to try to shed light on these questions and on what climbers climb in general.
 
 ---
 
@@ -54,7 +54,7 @@ The distributions of these types of climbing seem to suggest that sport ratings 
     <td><img src='analysis/images/route_difficulty.png' align='center' style='width: 800px;'></td>
 </p>
 
-We can get an idea of what type of climbing people favor based on the relationship between the route's *"stars"*, on a 0-5 scale, and the number of people who have made those votes, differentiated by type of climbing. It seems like, while more people have climbed sport in this dataset, they tend to rate trad routes higher. It also makes sense that the lower a route is rated, the less people would want to go climb it, meaning it would have less votes.
+We can get an idea of what type of climbing people favor based on the relationship between the route's *"stars"*, on a 0-4 scale, and the number of people who have made those votes, differentiated by type of climbing. It seems like, while more people have climbed sport in this dataset, they tend to rate trad routes higher. It also makes sense that the lower a route is rated, the less people would want to go climb it, meaning it would have less votes.
 
 <p align='middle'>
     <td><img src='analysis/images/route_stars.png' align='center' style='width: 500px;'></td>
