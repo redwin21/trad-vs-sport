@@ -70,9 +70,9 @@ All of this data seems to suggest that people climb sport more regularly, it is 
 
 ---
 
-## Lead or Follow, Send or Fall
+## Lead vs Follow, Flash vs Fall
 
-To do a deeper dive into the main questions being addressed, we have to break down the data a little further. When a climber climbs a route, there are a handul of "styles" by which they can climb. Leading is the one that we care about, which is when a climber starts from the gound, attached to a loose rope, and clips the rope into protection on their way up. Climbers lead in both sport and trad, but not in bouldering since there is no rope involved. For the sake of consistent comparisons, we also only care about when a climber successfully and cleanly climbed the route by leading it, as opposed to attempting and failing or falling along the way. The lead style categories "flash", "onsight", and "redpoint" all mean a clean and successful climb.
+To do a deeper dive into the main questions being addressed, we have to break down the data a little further. When a climber climbs a route, there are a handul of "styles" by which they can climb. Leading is the one that we care about, which is when a climber starts from the gound, attached to a loose rope, and clips the rope into protection on their way up. Climbers lead in both sport and trad, but not in bouldering since there is no rope involved. For the sake of consistent comparisons, we also only care about when a climber successfully and cleanly climbed the route by leading it, as opposed to attempting and failing or falling along the way. The lead style categories "flash", "onsight", and "redpoint" all mean a clean and successful climb. All future analysis will be filtered by these categories.
 
 <p align='middle'>
     <td><img src='analysis/images/climber_styles.png' align='center' style='width: 800px;'></td>
