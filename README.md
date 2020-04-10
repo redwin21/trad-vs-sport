@@ -12,7 +12,7 @@ Trad Climber           |  Sport Climber *([source](https://www.powercompanyclimb
 :-------------------------:|:-------------------------:
 ![](images/trad_climber.jpg)  |  ![](images/sport_climber.jpeg)
 
-Trad climbing involves placing your own protection as you lead the rope up to the top, and usually involves climbing in a crack where the gear can be placed. Sport climbing is oriented towards climbing on the face of the rock, where bolts are added to clip the rope into as protection. Both of these types of climbing, while very different, are rated on the same difficulty scale. It is a notorious notion in the climbing community that trad climbing is harder than sport climbing. Is this true? Are trad and sport different enough that they should be graded differently? Bouldering, which is another style of rock climbing, has its own difficulty scale, sho why don't trad or sport? This analysis is going to try to shed light on these questions.
+Trad climbing involves placing your own temporary protection as you lead the rope up to the top, and usually involves climbing in a crack where the gear can be placed. Sport climbing is oriented towards climbing on the face of the rock, where permanent bolts are added to clip the rope into as protection. Both of these types of climbing, while very different, are rated on the same difficulty scale. It is a notorious notion in the climbing community that trad climbing is harder than sport climbing. Is this true? Are trad and sport different enough that they should be graded differently? Bouldering, which is another style of rock climbing, has its own difficulty scale, sho why don't trad or sport? This analysis is going to try to shed light on these questions and on what climbers climb in general.
 
 ---
 
@@ -20,15 +20,15 @@ Trad climbing involves placing your own protection as you lead the rope up to th
 
 The data for this project was collected from [Mountain Project](https://www.mountainproject.com/), a site designed for climbers to investigate climbing routes and track their climbs. There are thousands of climbers active on the site, with thousands of routes listed. Mountain project provides an [api](https://www.mountainproject.com/data) which provides data in a clean, nested map structure. However, collecting all of the data used in the project was not as simple as running a few api calls. The parameters for the calls are user Ids and route Ids, which are not readily listed. 
 
-A workaround was required to get ahold of these Ids. One function of the api allowed for receiving routes based on geographic coordinates as parameters. This provided a set of routes that included route Ids and the url to each of the route pages. On those pages includes a list of climbers who rated those routes, along with links to their own personal page. I first called the coordinate-based route api and then web-scraped the user Ids from the voters on each of those routes to get a list of user Ids. With those Ids, I could use an api call to get data on all of the routes that those climbers had climbed. And finally, with that data, I could again call the api to get the route information with those route Ids. This data collection process can be seen in more detail on the [Data Collection page](https://github.com/redwin21/trad-vs-sport/tree/master/data_collection).
+A workaround was required to get ahold of these Ids. One function of the api allows for receiving routes based on geographic coordinates as parameters. This provided a set of routes that included route Ids and the url to each of the route pages. On those pages includes a list of climbers who rated those routes, along with links to their own personal page. I first called the coordinate-based route api and then web-scraped the user Ids from the voters on each of those routes to get a list of user Ids. With those Ids, I could use an api call to get data on all of the routes that those climbers had climbed. And finally, with that data, I could again call the api to get the route information with those route Ids. This data collection process can be seen in more detail on the [Data Collection page](https://github.com/redwin21/trad-vs-sport/tree/master/data_collection).
 
-Due to the process required for collecting the data, only a small subset of the existing data on the site was collected. The primary focus was starting with routes in the Pacific Northwest, acquiring data on the climbers who voted on those routes, and going from there. This resulted in a dataset of about 80,000 routes, 8,000 climbers, and 500,000 climbs.
+Due to the process required for collecting the data, only a small subset of the existing data on the site could actually be collected. The primary focus was starting with routes in the Pacific Northwest, acquiring data on the climbers who voted on those routes, and going from there. This resulted in a dataset of about 80,000 routes, 8,000 climbers, and 500,000 climbs. A much more extensive web-scraping scheme would be required to get all of the data on Mountain Project.
 
 ---
 
 ## What's in the data?
 
-There are many types of rock climbing routes, including routes that are combinations of various types. Some of the most popular and distinct types are trad, sport, bouldering, TR (top-rope), alpine, aid, ice, and mixed. Of the data collected, trad, sport and bouldering are the most pupular. The project will focus mainly on these three.
+There are many types of rock climbing routes, including routes that are combinations of various types. Some of the most popular and distinct types are: trad, sport, boulder, TR (top-rope), alpine, aid, snow, ice, and mixed. Of the data collected, trad, sport and bouldering are the most pupular. The project will focus mainly on these three.
 
 <p align='middle'>
     <td><img src='analysis/images/route_types.png' align='center' style='width: 500px;'></td>
@@ -54,7 +54,7 @@ The distributions of these types of climbing seem to suggest that sport ratings 
     <td><img src='analysis/images/route_difficulty.png' align='center' style='width: 800px;'></td>
 </p>
 
-We can get an idea of what type of climbing people favor based on the relationship between the routes *"stars"*, on a 0-5 scale, and the number of people who have made those votes, differentiated by type of climbing. It seems like, while more people have climbed sport in this dataset, they tend to rate trad routes higher. It also makes sense that the lower a route is rated, the less people would want to go climb it, meaning it would have less votes.
+We can get an idea of what type of climbing people favor based on the relationship between the route's *"stars"*, on a 0-5 scale, and the number of people who have made those votes, differentiated by type of climbing. It seems like, while more people have climbed sport in this dataset, they tend to rate trad routes higher. It also makes sense that the lower a route is rated, the less people would want to go climb it, meaning it would have less votes.
 
 <p align='middle'>
     <td><img src='analysis/images/route_stars.png' align='center' style='width: 500px;'></td>
@@ -78,7 +78,7 @@ To do a deeper dive into the main questions being addressed, we have to break do
     <td><img src='analysis/images/climber_styles.png' align='center' style='width: 800px;'></td>
 </p>
 
-With the data broken down in this way, we can take another look at route difficulty. This time, it'll be differentiated by the number of climbs, as opposed to the number of routes we looked at earlier. The distinction here is that only one of each route exists, but many climbers have climbed each one. The failures seem to have higher difficulties than the successes, which makes sense, climbers push themselves.
+With the data broken down in this way, we can take another look at route difficulty. This time, it'll be differentiated by the number of climbs, as opposed to the number of routes we looked at earlier. The distinction here is that only one of each route exists, but many climbers have climbed each one. The failures seem to have higher difficulties than the successes, which makes sense because climbers push themselves. It is interesting that the trad failures average is not much higher than the sport success average. Some climbers push themselves less on trad than on sport.
 
 <p align='middle'>
     <td><img src='analysis/images/climbs_difficulty.png' align='center' style='width: 800px;'></td>
@@ -90,13 +90,13 @@ With the data broken down in this way, we can take another look at route difficu
 
 We won't be able to prove whether trad is harder than sport or not. There are so many factors that go into both styles. But we can look at the data in a way to show that climbers are inherently better at sport than trad, given the same difficulty rating. Better at sport would mean their sport rating statistics are higher than their trad rating statistics.
 
-First, looking at the aggregate of the climbs grouped by each climber, we can see the distribution of their collective climbing ability. People tend to have a higher average sport rating than trad rating. People also tend to have a higher max sport rating than max trad rating (meaning the hardest rating of each style that they've climbed).
+First, looking at the aggregate of the climbs grouped by each climber, we can see the distribution of their collective climbing ability. People tend to have a higher average sport rating than trad rating. People also tend to have a higher max sport rating than max trad rating (meaning the hardest rating of each type that they've climbed).
 
 <p align='middle'>
     <td><img src='analysis/images/climber_stats.png' align='center' style='width: 800px;'></td>
 </p>
 
-When you look at the difference of a climbers sport and trad average, or sport and trad max, you can clearly see that for most climbers there is a difference. This plot is the sport rating minus the trad rating for each climber.
+When you look at the difference of a climber's sport and trad average, or sport and trad max, you can clearly see that for most climbers there is a difference. This plot is the sport rating minus the trad rating for each climber.
 
 <p align='middle'>
     <td><img src='analysis/images/sport_trad_diff.png' align='center' style='width: 500px;'></td>
@@ -128,8 +128,8 @@ For both of these tests, there is a lot of data, and small standard deviations, 
 
 All of these results seem to suggest that trad climbing is harder. If you take a climber, and make them climb a sport route, and then make them climb a trad route, they'd have an easier time with the sport one. Or, if you take a climber and ask them their sport grade, and then their trad grade, their trad answer would almost certainly be lower. So why can't we say trad is harder?
 
-There are plenty of reasons why a climber might be better at sport. For one, as we saw earlier, there are more sport routes available. We also saw that, whether it's related to availability or not, people climb sport more. So they are getting more practice at it. Climbing gyms, where most people train, are heaviliy oriented towards sport climbing. So people who train indoors during the week and outside on the weekend will get more sport practice. This data only accounts for outdoor climbing. Trad is also more prohibitive because it requires more technical knowledge and expensive gear, so it might make sense that less people do it.
+There are plenty of reasons why a climber might be better at sport. For one, as we saw earlier, there are more sport routes available. We also saw that, whether it's related to availability or not, people climb sport more. So they are getting more practice at it. Climbing gyms, where most people train, are heaviliy oriented towards sport climbing. So people who train indoors during the week will get even more sport practice, and this dataset only accounts for outdoor climbing. Trad is also more prohibitive because it requires more technical knowledge and expensive gear, so it might make sense that less people do it.
 
-There is also the technical aspect of trad that could weigh a climber down. When you place your own protection, it is mentally taxing to try to place the gear the correct way so that it can withstand a fall. It's also physically exhausting to spend that extra time to place it and to determine the direction to go on the route. Since you have to place all of that protection, you have to carry all of the gear up the climb with you, so you weigh more. With sport, it's much more straight-forward to clip the rope into protection that already exists, following a clear path of bolts, with minimal gear. The average climber can be weighed down by these aspects, meaning their trad grade would be lower. However, none of this actually implies that the physical aspect of climbing the different types of routes are different.
+There is also the technical aspect of trad that could weigh a climber down. When you place your own protection, it is mentally taxing to try to place the gear the correct way so that it can withstand a fall. It's also physically exhausting to spend that extra time to place it and to determine the direction to go on the route. Since you have to place all of that protection, you have to carry all of the gear up the climb with you, so you weigh more. With sport, it's much more straight-forward to clip the rope into protection that already exists, following a clear path of bolts, with much less gear. The average climber can be weighed down by these aspects, meaning their trad grade would be lower. However, none of this actually implies that the physical aspect of climbing the different types of routes are different.
 
-This analysis can't conclude that trad is harder, but it does suggest that climbers are better at sport. And also begs the question of whether or not these two types of climbing should be rated the same way at all.
+This analysis can't conclude that trad is harder, but it does suggest that climbers are better at sport. It also begs the question of whether or not these two types of climbing should be rated the same way at all. This would require a much more philisophical discussion.
