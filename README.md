@@ -24,6 +24,16 @@ A workaround was required to get ahold of these Ids. One function of the api all
 
 Due to the process required for collecting the data, only a small subset of the existing data on the site could actually be collected. The primary focus was starting with routes in the Pacific Northwest, acquiring data on the climbers who voted on those routes, and going from there. This resulted in a dataset of about 80,000 routes, 8,000 climbers, and 500,000 climbs. A much more extensive web-scraping scheme would be required to get all of the data on Mountain Project.
 
+Here's a snapshot of what the routes and climbers dataframes looks like:
+
+<p align='middle'>
+    <td><img src='images/routes_df.png' align='center' style='width: 800px;'></td>
+</p>
+
+<p align='middle'>
+    <td><img src='images/user_df.png' align='center' style='width: 600px;'></td>
+</p>
+
 ---
 
 ## What's in the data?
