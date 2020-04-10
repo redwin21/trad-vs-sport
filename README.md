@@ -26,10 +26,40 @@ Due to the process required for collecting the data, only a small subset of the 
 
 ---
 
-## Exploratory Data Analysis
+## What's in the data?
 
 There are many types of rock climbing routes, including routes that are combinations of various types. Some of the most popular and distinct types are trad, sport, bouldering, TR (top-rope), alpine, aid, ice, and mixed. Of the data collected, trad, sport and bouldering are the most pupular. The project will focus mainly on these three.
 
 <p align='middle'>
     <td><img src='analysis/images/route_types.png' align='center' style='width: 500px;'></td>
+</p>
+
+Currently in the U.S., roped climbing such as trad, sport, and TR are given a difficulty rating on the Yosemite Decimal Scale (YDS).  Bouldering is graded on the Vermin (V) scale. *([source](https://squamishclimbing.com/articles/grade-conversion-chart/))*
+
+<p align='middle'>
+    <td><img src='images/grade-convert.jpg' align='center' style='width: 300px;'></td>
+</p>
+
+A breakdown of the route ratings collected in the dataset shows that a lot of routes fall in the 5.7 to 5.11 range for rope climbing and V0-V5 for bouldering.
+
+<p align='middle'>
+    <td><img src='analysis/images/route_ratings_bar.png' align='center' style='width: 800px;'></td>
+</p>
+
+For user in analysis, the ratings were converted to a numerical rating based on the chart provided above. For instance, *5.6* would be 6.0, *5.11b* was given 11.8, *V5* is now 12.0, etc. This allowed for proper comparison and analysis. Distributions of trad, sport, and boulder routes based on their numerical rating can be seen int he following plots. Unfortunately, due to the numeric conversion of the ratings being based on discrete keys, the bin size for these, and all following histograms, have to be rather large so the plots look coarse. 
+
+<p align='middle'>
+    <td><img src='analysis/images/route_difficulty.png' align='center' style='width: 800px;'></td>
+</p>
+
+We can get an idea of what type of climbing people favor based on the relationship between the routes *"stars"*, on a 0-5 scale, and the number of people who have made those votes, differentiated by type of climbing. It seems like, while more people have climbed sport in this dataset, they tend to rate trad routes higher. It also makes sense that the lower a route is rated, the less people would want to go climb it, menaing it would have less votes.
+
+<p align='middle'>
+    <td><img src='analysis/images/route_stars.png' align='center' style='width: 500px;'></td>
+</p>
+
+We can see that same perspective from a slightly different angle by looking at how many routes of a certain type a climber has climbed in our dataset. It seems like people tend to climb more sport, which coincides with the data that shows it is more abundant.
+
+<p align='middle'>
+    <td><img src='analysis/images/num_climbs.png' align='center' style='width: 500px;'></td>
 </p>
