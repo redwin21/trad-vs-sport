@@ -46,7 +46,7 @@ A breakdown of the route ratings collected in the dataset shows that a lot of ro
     <td><img src='analysis/images/route_ratings_bar.png' align='center' style='width: 800px;'></td>
 </p>
 
-For use in analysis, the ratings were converted to a numerical rating based on the chart provided above. For instance, *5.6* would be 6.0, *5.11d* was given 11.8, *V5* is now 12.0, etc. This allowed for proper comparison and analysis. Distributions of trad, sport, and boulder routes based on their numerical rating can be seen in the following plots. Unfortunately, due to the numeric conversion of the ratings being based on discrete keys, the bin size for these histograms, and all following, have to be rather large, causing coarse plots.
+The ratings were converted to a numerical rating based on the chart provided above. For instance, *5.6* would be 6.0, *5.11d* was given 11.8, *V5* is now 12.0, etc. This allowed for proper comparison and analysis. Distributions of trad, sport, and boulder routes based on their numerical rating can be seen in the following plots. Unfortunately, due to the numeric conversion of the ratings being based on discrete keys, the bin size for these histograms, and all following, have to be rather large, causing coarse plots.
 
 The distributions of these types of climbing seem to suggest that sport ratings are generally higher than trad, or that more sport routes with higher ratings exist.
 
@@ -66,7 +66,7 @@ We can see a similar perspective from a slightly different angle by looking at h
     <td><img src='analysis/images/num_climbs.png' align='center' style='width: 500px;'></td>
 </p>
 
-All of this data seems to suggest that people climb sport more regularly, it is more available, and it is generally rated at higher ratings. If this is the case, it wouldn't be too much of a surprise that climbers are generally better at sport climbing on average. These ideas are consistent with the climbing community opinions.
+All of this data seems to suggest that people climb sport more regularly, it is more available, and it is generally rated at higher ratings. If this is the case, it wouldn't be too much of a surprise that climbers are generally better at sport climbing on average.
 
 ---
 
@@ -128,8 +128,8 @@ For both of these tests, there is a lot of data, and small standard deviations, 
 
 All of these results seem to suggest that trad climbing is harder. If you take a climber, and make them climb a sport route, and then make them climb a trad route, they'd have an easier time with the sport one. Or, if you take a climber and ask them their sport grade, and then their trad grade, their trad answer would almost certainly be lower. So why can't we say trad is harder?
 
-There are plenty of reasons why a climber might be better at sport. For one, as we saw earlier, there are more sport routes available. We also saw that, whether it's related to availability or not, people climb sport more. So they are getting more practice at it. Climbing gyms, where most people train, are heaviliy oriented towards sport climbing. So people who train indoors during the week and outside on the weekend will get more sport practice. This data only accounts for outdoor climbing.
+There are plenty of reasons why a climber might be better at sport. For one, as we saw earlier, there are more sport routes available. We also saw that, whether it's related to availability or not, people climb sport more. So they are getting more practice at it. Climbing gyms, where most people train, are heaviliy oriented towards sport climbing. So people who train indoors during the week and outside on the weekend will get more sport practice. This data only accounts for outdoor climbing. Trad is also more prohibitive because it requires more technical knowledge and expensive gear, so it might make sense that less people do it.
 
-There is also the technical aspect of trad that could weigh a climber down. When you place your own protection, it is mentally taxing to try to place the gear the correct way so that it can withstand a fall. It's also physically exhausting to spend that extra time to place it and to determine the direction to go on the route. With sport, it's much more straight-forward to clip the rope into protection that already exists, following a clear path of bolts. The average climber can be weighed down by these aspects, meaning their trad grade would be lower. However, none of this actually implies that the physical aspect of climbing the different types of routes are different.
+There is also the technical aspect of trad that could weigh a climber down. When you place your own protection, it is mentally taxing to try to place the gear the correct way so that it can withstand a fall. It's also physically exhausting to spend that extra time to place it and to determine the direction to go on the route. Since you have to place all of that protection, you have to carry all of the gear up the climb with you, so you weigh more. With sport, it's much more straight-forward to clip the rope into protection that already exists, following a clear path of bolts, with minimal gear. The average climber can be weighed down by these aspects, meaning their trad grade would be lower. However, none of this actually implies that the physical aspect of climbing the different types of routes are different.
 
-This analysis can't conclude taht trad is harder, but it does suggest that climbers are better at sport. And also begs the question of whether or not these two types of climbing should be rated the same way.
+This analysis can't conclude that trad is harder, but it does suggest that climbers are better at sport. And also begs the question of whether or not these two types of climbing should be rated the same way at all.
