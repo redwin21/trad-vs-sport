@@ -90,7 +90,7 @@ With the data broken down in this way, we can take another look at route difficu
 
 We won't be able to prove whether trad is harder than sport or not. There are so many factors that go into both styles. But we can look at the data in a way to show that climbers are inherently better at sport than trad, given the same difficulty rating. Better at sport would mean their sport rating statistics are higher than their trad rating statistics.
 
-First, looking at the aggregate of the climbs grouped by each climber, we can see the distribution of their collective climbing ability. People tend to have a higher average sport rating than trad rating. People also tend to have a higher max sport rating than max trad rating (meaning the hardest rating of each type that they've climbed).
+Looking at the aggregate of the climbs grouped by each climber, we can see the distribution of their collective climbing ability. People tend to have a higher average sport rating than trad rating. People also tend to have a higher max sport rating than max trad rating (meaning the hardest rating of each type that they've climbed).
 
 <p align='middle'>
     <td><img src='analysis/images/climber_stats.png' align='center' style='width: 800px;'></td>
